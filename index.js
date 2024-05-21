@@ -644,3 +644,71 @@ console.log(fruitNames);
 let shuffled = [2,5,7,4,1, 0, 4,2,22];
 shuffled.sort((a,b) => a - b);
 console.log(shuffled);
+
+console.log("and we are live with tazonday");
+
+//Date objects = objects that contain values that represent dates and
+//              times
+
+//Date(year, month, day, hour, minute, second, ms)
+const date = new Date();
+
+const coolDate = new Date(2024, 0, 1,2,3,4,5);
+console.log(date);
+console.log(coolDate);
+
+const firstDate = new Date(0);
+console.log(firstDate);//Wed, Dec 31, 1969
+
+const year = date.getFullYear();
+const month = date.getMonth();
+const dayz = date.getDate();
+const hour = date.getHours();
+date.setFullYear(2032);
+console.log(date);
+
+const date1 = new Date("2023-12-31");
+const date2 = new Date("2020-01-01");
+
+if(date1 > date2){
+    console.log("happy new year");
+}
+
+//closure = A function defined inside of another function,--------------
+//          the inner function has access to the variables and scope
+//          of the outer function, can make variables private and maintenance
+
+function outer(){
+    let message = "Hello there";
+
+    function inner(){
+        console.log(message);
+    }
+    inner();
+}
+
+outer();
+
+function createCounter(){
+    let count = 0;
+
+    function increment(){
+        count++;
+        console.log("count increased to " + count);
+
+    }
+   
+    function getCount(){
+        return count;
+    }
+    return {increment, getCount};//return an object with its method of increment
+}
+
+const counter = createCounter();
+counter.increment();
+counter.increment();
+counter.increment();//notice the count variable is not resetting
+
+//cannot do
+// counter.count because the variable is protected would need getter
+console.log("count is " + counter.getCount());
