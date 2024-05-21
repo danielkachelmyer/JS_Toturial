@@ -712,3 +712,13 @@ counter.increment();//notice the count variable is not resetting
 //cannot do
 // counter.count because the variable is protected would need getter
 console.log("count is " + counter.getCount());
+
+//setTimeou() = function that allows you to schedule the execution of 
+//              a function in milliseconds, approximation (not accurate)
+
+function sayWhatsUp(){
+    console.log("whats up danger cant sto pme down");
+
+}
+
+setTimeout(sayWhatsUp, 3000);
