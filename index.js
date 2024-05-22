@@ -198,7 +198,7 @@ for(let fruit of fruits){
 console.log(fruits[1]);
 //spread operator =  ... allows in iterable such as an array or string-----
 //                  to be expaned into seperate elements
-myString = "abcdef";
+let myString = "abcdef";
 let numbers = [1,2,3,4,5];
 let letters = [...myString];
 console.log("here are some letters: " + letters);//output "a,b,c,d,e,f"
@@ -713,7 +713,7 @@ counter.increment();//notice the count variable is not resetting
 // counter.count because the variable is protected would need getter
 console.log("count is " + counter.getCount());
 
-//setTimeou() = function that allows you to schedule the execution of 
+//setTimeou() = function that allows you to schedule the execution of----- 
 //              a function in milliseconds, approximation (not accurate)
 
 function sayWhatsUp(){
@@ -721,4 +721,29 @@ function sayWhatsUp(){
 
 }
 
-setTimeout(sayWhatsUp, 3000);
+//setTimeout(sayWhatsUp, 3000);
+
+//ES6 module = an external file that contains reusable code------------
+//              that can be imported into other javascript files
+//              can contain variables, classes, functions .. and more
+
+
+import{PISS, getCircumference, getArea, getVolume} from "./mathUtil.js";
+
+console.log(PISS);//like libary you use functions from a different file
+console.log(getArea(4));//like using diff classes, just remeber use export
+
+//synchrous = Executes line by line consecutively in a sequential manner
+//              code that waits for an operation to complete
+
+//asynchrounous = Allows mutiple operation to be performed concurrently without
+//                  waiting, doesnt block the execution flow and allows 
+//                  the program to continue used with 
+//                  I/O operations, network requests, fetching data
+//                  handled with: callbacks, promises, asymc await
+
+setTimeout(()=> console.log("task 1"), 3000);
+
+console.log("task 2");
+console.log("task 3");
+console.log("task 4");
