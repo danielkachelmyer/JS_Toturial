@@ -742,8 +742,29 @@ console.log(getArea(4));//like using diff classes, just remeber use export
 //                  I/O operations, network requests, fetching data
 //                  handled with: callbacks, promises, asymc await
 
-setTimeout(()=> console.log("task 1"), 3000);
+//setTimeout(()=> console.log("task 1"), 3000);
 
 console.log("task 2");
 console.log("task 3");
 console.log("task 4");
+
+//Error = An object that is created to represent a problem that occurs
+//          Occur often with user input or establishing a connection
+
+/*
+try{} encloses code that might potentially cause an error
+catch{} = catch and handle any thrown errors from try{}
+finally{} = (optional) always executes. used mostly for clean up
+*/
+
+try{
+    console.log(unnamed);
+}
+catch(error){
+    console.error(error);
+}
+finally{
+    //this code also executes
+    console.log("finally execute this after try block");
+}
+console.log("end of program");//still prints after try/catch block executes
