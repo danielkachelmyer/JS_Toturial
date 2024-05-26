@@ -768,3 +768,99 @@ finally{
     console.log("finally execute this after try block");
 }
 console.log("end of program");//still prints after try/catch block executes
+
+//you can also throw errors like so "throw new Error("you cant divide by 0");"
+
+
+//DOM = Document Object Model
+//      Object{} that represents the page you see in the web browser
+//      and provides you with API to interact with it.
+//      Web browser constructs the DOM when it loads an HTML document,
+//      and structures all the elements in a tree-like representation.
+//      javascript can access the DOM to dynamically
+//      change the content, structure, and style of a web page
+
+console.dir(Document);//title of webpage is called Document
+
+
+//element selectors = Methods used to target and manipulate HTML elements
+//                  They allow you to select one or multiple HTML elements
+//                  from the DOM (Document Object Model)
+
+//1. document.getElementByID()      //Element or Null
+//2. docuemtn.getElementsClassName()//HTML Collection
+//3. docuemtn.getElementsByTagName()//HTML Collection
+//4. document.querySelector()       //First Element or Null
+//5. document.querySelectorAll()    //Nodelist
+
+const myHeading = document.getElementById("my-heading");
+myHeading.style.backgroundColor = "yellow";
+console.log(myHeading);
+
+// DOM Navigation = The process of navigating through the structure
+//                  of an HTML document using javascripts
+
+//event Listener = listen for specific events to create interactive web pagse
+//                  events click, mouseover, mousout
+//                  .addEventListener(event, callback);
+
+
+const myBox = document.getElementById("myBox");
+function changeColor(event){
+    event.target.style.backgroundColor = "tomato";
+    event.target.textContent = "OUCH";
+
+}
+myBox.addEventListener("click", changeColor);
+myBox.addEventListener("mouseover", event1=>{
+    event1.target.style.backgroundColor= "yellow";
+})
+
+myBox.addEventListener("mouseout", event2=>{
+    event2.target.style.backgroundColor= "green";
+})
+
+//key events-------------------------------------------------------------
+//          keydown, keyup
+
+document.addEventListener("keydown", event => {
+    console.log(event.key);
+})
+
+
+document.addEventListener("keyup", event => {
+    console.log("Key up = " + event.key);
+})
+
+//Node List = static collection of HTML elements by (id, class, element)
+//              can be created by using querySelectorAll()
+
+let buttons = document.querySelectorAll(".myButtons");
+//use . followed by class name to select class named elements
+
+buttons.forEach(button => {
+    button.addEventListener("mouseover", event =>{
+        event.target.style.backgroundColor = "blue";
+    })
+})
+
+buttons.forEach(button => {
+    button.addEventListener("mouseout", event =>{
+        event.target.style.backgroundColor = "aqua";
+    })
+})
+
+//classList = Element proeprty in javascript used to interact
+//              with an elements's list of classes (cs classes)
+//              allows you to make reusable classes for any elements
+//              across your webpage
+
+// add()
+//remove()
+//togggle(remove if present, add if not)
+//replace(oldClass, new Class)
+//contains()
+
+const myCoolButton = document.getElementById("myCoolButton");
+
+myCoolButton.classList.add("enabled");//add the class enabled to that button

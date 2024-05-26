@@ -2,4 +2,32 @@ body{
     font-family: Verdana;
     font-size: 2em;
 }
+#myBox{
+    background-color:lightgreen;
+    width : 300;
+    height:300;
+    
+}
 
+.myButtons{
+    font-size: 4rem;
+    margin:10px;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    background-color:aqua;
+    color: white;
+}
+
+#myCoolButton{
+    font-size: 4rem;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    padding:10px 15px;
+}
+
+.enabled{
+    background-color: aquamarine;
+    color: black;
+}
