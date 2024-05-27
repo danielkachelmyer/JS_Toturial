@@ -864,3 +864,24 @@ buttons.forEach(button => {
 const myCoolButton = document.getElementById("myCoolButton");
 
 myCoolButton.classList.add("enabled");//add the class enabled to that button
+
+
+//Callback Hell = Situation in javascript where callbacks
+//                  are nested within orther callbacks to the 
+//                  degree where the code is difficult to read.
+//                  old pattern to handle asynchronous functions.
+//                  use promises + asunc/await to avoid callback hell
+
+/*
+task1{
+    task2{
+        task3{   
+            task4{
+            //this is nesting callbacks
+            }
+        }
+    }
+}
+*/
+
+''
