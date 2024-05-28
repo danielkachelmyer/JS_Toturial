@@ -884,4 +884,105 @@ task1{
 }
 */
 
-''
+//Promise = An object that manages asynchronous operations.
+//              Wrap a Promise Object around {asynchronous code}
+//              "I promise to return a value"
+//              PENDING-> RESOLVED or REJECTED
+//              new Promise((resovle, reject) => {asynchronous code})
+
+//Do these chores in order
+//walk the dog
+//clean the kitchen
+//take out the trash
+/*
+function walkDog(callback){
+    setTimeout(()=>{
+        console.log("You walk the dog");
+        callback();
+    }, 1500)
+}
+
+function cleanKitchen(callback){
+    setTimeout(()=>{
+        console.log("You clean the kitchen");
+        callback();
+    }, 2500)
+}
+
+function takeOutThrask(callback){
+    setTimeout(()=>{
+        console.log("You take out the trash");
+        callback();
+    }, 500)
+}
+
+walkDog(()=> {
+    cleanKitchen(() =>{
+        takeOutThrask(()=> console.log("you are done with all the chores"));
+    });
+});
+
+//instead of callback hell
+//add in return new Promise
+
+function walkDogz(callback){
+    
+    return new Promise((resolve, reject) =>{
+        setTimeout(()=>{
+            resolve("You walk the dog");
+            callback();
+        }, 1500)
+    })
+}
+*/
+//Async/Await = Async = makes a function return a promise
+//              Await = makes an async function wait for a promise
+
+//              Alows you write asynchronous code in a synchrnous manner
+//              Async doesn't have resolve or reject parameters
+//              Everything after Await is placed in an event queue
+
+//JSON = (JavaScript Object Notation) data-interchanging format
+//          used for exchanging data between a server and a web application
+//          JSON files {key:vale} OR [value1, value2, value3]
+
+//          JSON.stringify() = converts a JS object to a JSON string.
+//          JSON.parse() = converts a JSOn string to a JS object
+
+const names = ["Spongebob", "Patrick", "Squidward", "Sandy"];
+
+const jsonString = JSON.stringify(names);
+
+console.log(names);
+
+const parsedData = JSON.parse(jsonString);
+console.log(parsedData);
+
+fetch("person.json")
+    .then(response => response.json())
+    .then(value => console.log(value))
+
+fetch("people.json")
+    .then(response => response.json())
+    .then(values => values.forEach(value => console.log(value.isEmployed)))
+    .catch(error => console.log(error()))
+
+//Fetch = Function used for making HTTp requests to fetch resources.
+//          (JSON style data, images, files)
+//          simplifies asynchronous data fetching in JavaScript and
+//          used for interacting with APIs to retrieve and send
+///         data asynchronously over the web.
+//          fetch(url, {options})
+
+fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error(error))
+
+
+    /*
+    if(!response.ok){
+        throw new Error("coulc not fetch resource");
+        return response.json();
+    }
+    */
